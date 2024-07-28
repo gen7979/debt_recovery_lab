@@ -1,18 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use App\Http\Controllers\DebtController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+// 借金返済計算の処理
+Route::get('/calculate', [DebtController::class, 'calculate'])->name('calculate');
